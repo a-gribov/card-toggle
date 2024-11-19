@@ -1,0 +1,323 @@
+body {
+  font-family: 'Proxima Nova', sans-serif;
+  background-color: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card {
+  overflow: hidden;
+  width: 768px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px 24px 16px;
+  box-sizing: border-box;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #0000001A;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.card__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.card__info {
+  flex-grow: 1;
+  margin-left: 12px;
+}
+
+.card__name {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.card__subtitle {
+  font-size: 14px;
+  color: #00000066;
+}
+
+.card__stats {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 12px;
+}
+
+.card__stat {
+  display: flex;
+  flex-direction: column;
+  min-width: 64px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.card__stat span:first-child {
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #0000001A
+}
+
+.card__stat.green {
+  color: #62B435;
+}
+
+.card__stat.red {
+  color: #F64747;
+}
+
+.card__stat.gray {
+  color: #00000066;
+}
+
+.card__stat.roi span:first-child,
+.card__stat.profit span:first-child {
+  font-weight: 400;
+}
+
+.card__content-wrapper {
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 120px; /* Ограничение на 5 строк */
+}
+.card__content-wrapper::before {
+  content: '';
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.67%, #FFFFFF 100%);
+  height: 27px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.card__content-wrapper.expanded::before {
+  content: none;
+}
+
+.card__content {
+  font-size: 16px;
+  color: #00000099;  ;
+  line-height: 24px;
+}
+
+.card__toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: -43px;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 2px 4px 12px 0px #00000014;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card__toggle:hover {
+  background-color: #f7f7f7;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.card__content-wrapper.expanded + .card__toggle .arrow {
+  transform: rotate(180deg);
+}
+
+.card__container {
+  position: relative;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 24px -24px 0;
+  padding: 24px;
+  background-color: #F0F1F266;
+  border-left: 2px solid #3498DB;
+}
+
+.card__prediction {
+  display: flex;
+  flex-direction: column;
+  max-width: 432px;
+}
+
+.card__label {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  color: #00000066;
+}
+
+.card__value {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.card__cta {
+  display: flex;
+  align-items: center;
+}
+
+.card__coefficient {
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+}
+
+.card__coefficient-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: #333333;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.card__coefficient-wrapper span {
+  color: #000000CC;
+}
+
+.card__logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.card__koef {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.card__koef-stat {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000CC;
+}
+
+.card__button {
+  background: #3498DB;
+  color: #fff;
+  border: none;
+  padding: 12px 17.5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.card__button:hover {
+  background-color: #0056b3;
+}
+
+  /* Скрываем на мобильных (до 744px) */
+  @media (max-width: 743px) {
+    .desktop-only {
+      display: none;
+    }
+  }
+
+  /* Скрываем на десктопах (от 744px и больше) */
+  @media (min-width: 744px) {
+    .mobile-only {
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 743px) {
+    .card {
+      padding: 16px 16px 12px;
+    }
+
+    .card__header {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+    }
+
+    .card__footer {
+      flex-wrap: wrap;
+      padding: 16px;
+    }
+
+    .card__button {
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .card__info {
+      margin-left: 8px;
+    }
+
+    .card__prediction {
+      max-width: 69%;
+    }
+
+    .card__logo {
+      margin-right: 8px;
+    }
+
+    .card__value {
+      line-height: 18px;
+    }
+
+    .card__koef-stat {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .card__stats {
+      gap: 4px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    .card__stat {
+      min-width: unset;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .card__stat span:first-child {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .card__stat.profit {
+      font-size: 14px;
+      line-height: 16px;
+      color: #00000066;
+    }
+
+    .card__stat.profit .green {
+      margin-top: 2px;
+      color: #62B435;
+      font-weight: 600;
+    }
+  }

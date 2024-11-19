@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expandable Text</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="card__header desktop-only">
+        <img
+          src="assets/images/avatar.png"
+          alt="Владимир Вуйтек"
+          class="card__avatar"
+        />
+        <div class="card__info">
+          <div class="card__name">Владимир Вуйтек</div>
+          <div class="card__subtitle">Статистика за последние 30 дней</div>
+        </div>
+        <div class="card__stats">
+          <div class="card__stat green"><span>+</span><span>647</span></div>
+          <div class="card__stat gray"><span>=</span><span>29</span></div>
+          <div class="card__stat red"><span>—</span><span>413</span></div>
+          <div class="card__stat roi">
+            <span>ROI, %</span><span class="card__stat green">23,9%</span>
+          </div>
+          <div class="card__stat profit">
+            <span>Прибыль</span><span class="card__stat green">+22 820</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__header mobile-only">
+        <img
+          src="assets/images/avatar.png"
+          alt="Владимир Вуйтек"
+          class="card__avatar"
+        />
+        <div class="card__info">
+          <div class="card__name">Владимир Вуйтек</div>
+          <div class="card__stats">
+            <div class="card__stat green"><span>647</span></div>
+            /
+            <div class="card__stat gray"><span>29</span></div>
+            /
+            <div class="card__stat red"><span>413</span></div>
+            /
+            <div class="card__stat roi"><span>ROI 23,9%</span></div>
+          </div>
+        </div>
+        <div class="card__stat profit">
+          <span>30 дней</span><span class="green">+22 820</span>
+        </div>
+      </div>
+
+      <div class="card__container">
+        <div class="card__content-wrapper">
+          <div class="card__content">
+            В Кубке страны команда Унаи Эмери бессовестно размялась на
+            «Виктории» из Ла-Коруньи (8:0). При этом серьёзные соперники:
+            «Севилья», «Барселона» (даже кризисная) и «МЮ» (ещё более кризисный)
+            — били «Вильярреал». ЛЧ не турнир для Эмери. Он гроссмейстер убогой
+            ЛЕ. Поэтому у «Аталанты» есть шансы. Ей необходимо играть лишь на
+            победу. Только выигрыш выводит её в плей-офф ЛЧ. А поражение в
+            комплекте с победой «Янг Бойз» над «МЮ» оставляет бергамасков без
+            еврокубковой весны. Гасперини вполне по силам одолеть команду Эмери.
+            «Аталанта» уже обыгрывала недавно «Юве» и «Наполи». Поставлю на
+            победу итальянского клуба.
+          </div>
+        </div>
+        <button class="card__toggle">
+          <img
+            class="arrow"
+            src="assets/images/arrow.svg"
+            alt="значок стрелки"
+          />
+        </button>
+      </div>
+
+      <div class="card__footer">
+        <div class="card__prediction">
+          <div class="card__label">ПРОГНОЗ</div>
+          <div class="card__value">Штрафное время: тотал меньше 16,5</div>
+        </div>
+        <div class="card__cta">
+          <div class="card__coefficient">
+            <img src="assets/images/logo.png" alt="logo" class="card__logo" />
+            <div class="card__coefficient-wrapper">
+              <span class="card__koef desktop-only">Коэффициент</span>
+              <span class="card__koef mobile-only">Кэф</span>
+
+              <span class="card__koef-stat">3.20</span>
+            </div>
+          </div>
+          <button class="card__button desktop-only">Сделать ставку</button>
+        </div>
+        <button class="card__button mobile-only">Сделать ставку</button>
+      </div>
+    </div>
+    <script src="script/script.js"></script>
+  </body>
+</html>
